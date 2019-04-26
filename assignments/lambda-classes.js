@@ -61,32 +61,44 @@ const fred = new Instructor({
     specialty: 'Front-end',
     catchPhrase: `Don't forget the homies`
   });
-  console.log(johnny);
-  console.log(johnny.demo("Math"));
-  console.log(johnny.grade("Nina","CS"))
-  console.log(fred);
-  console.log(fred.demo("English"));
-  console.log(fred.grade("Olivia","Science"))
+//   console.log(johnny);
+//   console.log(johnny.demo("Math"));
+//   console.log(johnny.grade("Nina","CS"))
+//   console.log(fred);
+//   console.log(fred.demo("English"));
+//   console.log(fred.grade("Olivia","Science"))
 
-// class Student extends Person {
-//     constructor(studAttrs) {
-//         super(studAttrs);
-//         console.log(studAttrs);
-//         this.previousBackground = studAttrs.previousBackground;
-//         this.className = studAttrs.className;
-//         this.favSubjects = studAttrs.favSubjects;
-//     }
-//     listsSubjects() {
-//         console.log(this.favSubjects.length);
-//     }
-// }
-// const roy = new Student({
-//     name: 'Roy',
-//     age: 23,
-//     location: 'Texas',
-//     gender: "M",
-//     previousBackground: 'PR',
-//     className: 'WebPt6',
-//     favLanguage: 'HTML, CSS, Javascript'
-// });
-// console.log(roy);
+class Student extends Person {
+    constructor(studAttrs) {
+        super(studAttrs);
+        console.log(studAttrs);
+        this.previousBackground = studAttrs.previousBackground;
+        this.className = studAttrs.className;
+        this.favSubjects = studAttrs.favSubjects;
+    }
+    listsSubjects() {
+        for (let i = 0; i < this.favSubjects.length; i++) {
+            console.log(this.favSubjects[i]);
+        }
+    }
+    prAssignment (subject){
+        return `${this.name} has submitted a PR for ${subject}.`
+    }
+    sprintChallenge (otherSubject){
+        console.log(`${this.name} has begun sprint challenge on ${otherSubject}.`) 
+    }
+
+}
+const roy = new Student({
+    name: 'Roy',
+    age: 23,
+    location: 'Texas',
+    gender: "M",
+    previousBackground: 'PR',
+    className: 'WebPt6',
+    favSubjects: ['HTML', 'CSS', 'Javascript'], 
+});
+console.log(roy);
+console.log(roy.listsSubjects());
+console.log(roy.prAssignment('Math'));
+console.log(roy.sprintChallenge('Science'));
