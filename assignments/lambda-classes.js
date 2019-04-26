@@ -24,8 +24,8 @@ const benny = new Person({
     gender: "M"
 });
 
-// console.log(john);
-// console.log(benny);
+console.log(john);
+console.log(benny);
 
 
 class Instructor extends Person {
@@ -61,12 +61,12 @@ const fred = new Instructor({
     specialty: 'Front-end',
     catchPhrase: `Don't forget the homies`
   });
-//   console.log(johnny);
-//   console.log(johnny.demo("Math"));
-//   console.log(johnny.grade("Nina","CS"))
-//   console.log(fred);
-//   console.log(fred.demo("English"));
-//   console.log(fred.grade("Olivia","Science"))
+  console.log(johnny);
+  console.log(johnny.demo("Math"));
+  console.log(johnny.grade("Nina","CS"))
+  console.log(fred);
+  console.log(fred.demo("English"));
+  console.log(fred.grade("Olivia","Science"))
 
 class Student extends Person {
     constructor(studAttrs) {
@@ -102,3 +102,33 @@ console.log(roy);
 console.log(roy.listsSubjects());
 console.log(roy.prAssignment('Math'));
 console.log(roy.sprintChallenge('Science'));
+
+class ProjectManager extends Instructor {
+    constructor(pmAttrs){
+        super(pmAttrs);
+        console.log(pmAttrs);
+        this.gradeClassName = pmAttrs.gradeClassName;
+        this.favInstructor = pmAttrs.favInstructor;
+    }
+    standUp(channel) {
+        return `${this.name} announces to ${channel}, @channel standby times!`
+    }
+    debugsCode(studentName, subject) {
+        return  `${this.name} debugs ${studentName}'s code on ${subject}.`
+
+    }
+}
+const kiana = new ProjectManager ({
+    name: 'Kiana',
+    age: 20,
+    location: 'Texas',
+    gender: "F",
+    favLanguage: 'Python',
+    specialty: 'Back-end',
+    catchPhrase: `Sup Y'allll`,
+    gradeClassName: 'WebPt6',
+    favInstructor: 'Josh',
+});
+console.log(kiana);
+console.log(kiana.standUp('Web Help'));
+console.log(kiana.debugsCode('Kaiser', 'CS'));
