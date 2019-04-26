@@ -37,10 +37,10 @@ class Instructor extends Person {
         this.catchPhrase = instAttrs.catchPhrase;
     }
     demo(subject) {
-        return `Today we are learning about ${this.subject}.`
+        return `Today we are learning about ${subject}.`
     }
     grade(student, subject){
-        return `${student.name} receives a perfect score on ${this.subject}.`
+        return `${student} receives a perfect score on ${subject}.`
     }
 }
 const johnny = new Instructor ({
@@ -50,7 +50,7 @@ const johnny = new Instructor ({
     gender: "M",
     favLanguage: 'Python',
     specialty: 'Back-end',
-    catchPhrase: `Rolling with the homies`
+    catchPhrase: `Rolling with the homies`,
 });
 const fred = new Instructor({
     name: 'Fred',
@@ -61,13 +61,32 @@ const fred = new Instructor({
     specialty: 'Front-end',
     catchPhrase: `Don't forget the homies`
   });
+  console.log(johnny);
+  console.log(johnny.demo("Math"));
+  console.log(johnny.grade("Nina","CS"))
+  console.log(fred);
+  console.log(fred.demo("English"));
+  console.log(fred.grade("Olivia","Science"))
 
-//   console.log(johnny);
-//   console.log(fred);
-
-class Student extends Person {
-    constructor(studAttrs) {
-        super(studAttrs);
-        console.log(studAttrs);
-    }
-}
+// class Student extends Person {
+//     constructor(studAttrs) {
+//         super(studAttrs);
+//         console.log(studAttrs);
+//         this.previousBackground = studAttrs.previousBackground;
+//         this.className = studAttrs.className;
+//         this.favSubjects = studAttrs.favSubjects;
+//     }
+//     listsSubjects() {
+//         console.log(this.favSubjects.length);
+//     }
+// }
+// const roy = new Student({
+//     name: 'Roy',
+//     age: 23,
+//     location: 'Texas',
+//     gender: "M",
+//     previousBackground: 'PR',
+//     className: 'WebPt6',
+//     favLanguage: 'HTML, CSS, Javascript'
+// });
+// console.log(roy);
