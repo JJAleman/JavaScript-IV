@@ -11,6 +11,23 @@ class Person {
     }
 }
 
+const john = new Person({
+    name: 'John',
+    age: 23,
+    location: 'Texas',
+    gender: "M"
+});
+const benny = new Person({
+    name: 'Benny',
+    age: 29,
+    location: 'Texas',
+    gender: "M"
+});
+
+// console.log(john);
+// console.log(benny);
+
+
 class Instructor extends Person {
     constructor(instAttrs){
         super(instAttrs);
@@ -21,6 +38,36 @@ class Instructor extends Person {
     }
     demo(subject) {
         return `Today we are learning about ${this.subject}.`
+    }
+    grade(student, subject){
+        return `${student.name} receives a perfect score on ${this.subject}.`
+    }
+}
+const johnny = new Instructor ({
+    name: 'Johnny',
+    age: 30,
+    location: 'Texas',
+    gender: "M",
+    favLanguage: 'Python',
+    specialty: 'Back-end',
+    catchPhrase: `Rolling with the homies`
+});
+const fred = new Instructor({
+    name: 'Fred',
+    age: 37,
+    location: 'Bedrock',
+    gender: 'male',
+    favLanguage: 'JavaScript',
+    specialty: 'Front-end',
+    catchPhrase: `Don't forget the homies`
+  });
 
+//   console.log(johnny);
+//   console.log(fred);
+
+class Student extends Person {
+    constructor(studAttrs) {
+        super(studAttrs);
+        console.log(studAttrs);
     }
 }
